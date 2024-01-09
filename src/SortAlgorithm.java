@@ -63,15 +63,7 @@ public class SortAlgorithm extends JPanel {
                 if (sortDone()) {
                     timer.stop();
                 } else {
-                    if (typeSort == 0) {
-                        bubbleSortOnlyOneItemNext();
-                    } else if (typeSort == 1) {
-                        insertSortOnlyOneItemNext();
-                    } else if (typeSort == 2) {
-                        selectionSortOnlyOneItemNext();
-                    } else {
                         QuickSortNext();
-                    }
                 }
                 repaint();
             }
@@ -97,16 +89,9 @@ public class SortAlgorithm extends JPanel {
         buttonNext2.addActionListener(e -> {
             timer.stop();
             setReset2();
-            if (typeSort == 0) {
-                Bubble();
-            } else if (typeSort == 1) {
-                Insert();
-            } else if (typeSort == 2) {
-                Selection();
-            } else {
-                Quick(0, list.length - 1);
-                repaint();
-            }
+            Quick(0, list.length - 1);
+            repaint();
+
         });
         buttonBack.addActionListener(e ->
         {
@@ -245,22 +230,6 @@ public class SortAlgorithm extends JPanel {
 
     }
 
-    public void Bubble()
-    {
-        while (!Back.isEmpty())
-            Back.pop();
-        for (int i = 0; i < list.length - 1; i++) {
-            for (int y = 0; y < list.length - i - 1; y++) {
-                if (list[y] > list[y + 1]) {
-                    int tmp = list[y];
-                    list[y] = list[y + 1];
-                    list[y + 1] = tmp;
-                }
-            }
-        }
-        repaint();
-    }
-
     public void selectionSortOnlyOneItemNext() {
         if (currentIndex < list.length) {
             if (j < list.length)
@@ -336,21 +305,6 @@ public class SortAlgorithm extends JPanel {
         }
     }
 
-    public void Selection() {
-        for (int i = 0; i < list.length - 1; i++) {
-            int min_idx = i;
-            for (int y = i + 1; y < list.length; y++) {
-                if (list[y] < list[min_idx]) {
-                    min_idx = y;
-                }
-            }
-            int temp = list[i];
-            list[i] = list[min_idx];
-            list[min_idx] = temp;
-        }
-        repaint();
-    }
-
     public void insertSortOnlyOneItemNext() {
 
         if (doi == 1)
@@ -422,19 +376,6 @@ public class SortAlgorithm extends JPanel {
         } else {
             buttonNext.setEnabled(true);
         }
-    }
-
-    public void Insert() {
-        for (int i = 1; i < list.length; i++) {
-            int key = list[i];
-            int y = i - 1;
-            while (y >= 0 && key < list[y]) {
-                list[y + 1] = list[y];
-                y--;
-            }
-            list[y + 1] = key;
-        }
-        repaint();
     }
 
     public void QuickSortNext() {
