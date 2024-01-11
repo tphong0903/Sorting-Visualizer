@@ -276,6 +276,7 @@ public class SortAlgorithm extends JPanel {
             buttonBack.setEnabled(true);
             buttonNext.setEnabled(true);
             repaint();
+
             if (Back.pop() == 1)
             {
                 currentIndex--;
