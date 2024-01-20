@@ -6,6 +6,7 @@ public class Main extends JFrame {
         frame.setResizable(false);
         frame.add(new Sort());
         frame.pack();
+
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
