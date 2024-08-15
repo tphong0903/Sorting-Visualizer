@@ -159,6 +159,7 @@ public class SortAlgorithm extends JPanel {
         NUM_OF_ITEMS = 15;
         list = new Integer[]{0, 0};
         j = 0;
+        j1 = NUM_OF_ITEMS - 1;
         tmpIndex = 0;
         currentIndex = 0;
         nextCurrentIndex = 1;

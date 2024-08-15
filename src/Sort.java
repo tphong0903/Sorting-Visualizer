@@ -25,8 +25,6 @@ public class Sort extends JPanel {
         gbc.gridy++;
         sortAnimate.setBorder(new CompoundBorder(new TitledBorder("Sort Animate"), new EmptyBorder(0, 0, 0, 0)));
         add(sortAnimate, gbc);
-
-
         sortAnimate.run.addActionListener(e -> {
             {
                 try {
